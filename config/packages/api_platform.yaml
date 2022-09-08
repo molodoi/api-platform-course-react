@@ -1,0 +1,16 @@
+api_platform:
+    show_webby: false
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
+        api_keys:
+            JWT:
+                name: Authorization
+                type: header
+    defaults:
+        pagination_enabled: false # desactive la pagination sur toutes les resources
+        pagination_items_per_page: 8 # pagination sur toutes les resources
+        pagination_client_enabled: true # Autoriser le client a activer ou non la pagination
