@@ -56,7 +56,10 @@ Encore
     })
 
     // enables Sass/SCSS support
-    //.enableSassLoader()
+    .enableSassLoader()
+
+    // Enable PostCSS Support
+    .enablePostCssLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -70,6 +73,12 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
+
+    .configureDevServerOptions(options => {
+        options.allowedHosts = 'all';
+        // in older Webpack Dev Server versions, use this option instead:
+        // options.firewall = false;
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();
