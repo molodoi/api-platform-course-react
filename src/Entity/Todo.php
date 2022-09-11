@@ -21,7 +21,7 @@ use Knp\DoctrineBehaviors\Contract\Entity\TimestampableInterface as Timestampabl
 #[ApiResource(
     attributes: [
         "pagination_enabled" => false, // Surcharge et Active la pagination sur les todos
-        "order" => ['priority'=> 'ASC']
+        "order" => ['priority'=> 'DESC']
     ], 
     normalizationContext:['groups' => 'todos_read']
 )]
@@ -34,6 +34,7 @@ class Todo implements TimestampableInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['todos_read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]

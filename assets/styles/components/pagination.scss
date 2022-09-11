@@ -1,0 +1,23 @@
+.mypagination{
+    @apply flex flex-row flex-nowrap justify-between md:justify-center items-center my-4 mb-10
+}
+
+.mypagination .btn-prev{
+    @apply ml-4 flex w-10 h-10 mr-1 justify-center items-center rounded-full bg-white text-gray-500 border hover:border-gray-300      
+}
+
+.mypagination .btn-prev.active, .mypagination .btn-next.active{        
+    @apply opacity-50 cursor-not-allowed text-gray-300 border-0 pointer-events-none
+}
+
+.mypagination .btn-next{
+    @apply mr-4 md:mr-0 flex w-10 h-10 ml-1 justify-center items-center rounded-full bg-white text-gray-500 border hover:border-gray-300
+}
+
+.mypagination .page {
+    @apply hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white text-gray-500 hover:border-gray-300
+}
+
+.mypagination .page.active{
+    @apply border-gray-500 bg-gray-500 text-white cursor-not-allowed pointer-events-none
+}

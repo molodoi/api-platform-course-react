@@ -47,11 +47,13 @@ class AppFixtures extends Fixture
 
             $manager->persist($user);
 
-            for($t = 0; $t < 12 ; $t++){
+            for($t = 0; $t < 4 ; $t++){
                 $todo = new Todo();
 
                 $todo->setTitle('Todo '.$t)
-                    ->setContent('Faire ceci, faire cela '.$t)
+                    ->setContent('Faire ceci, faire cela '.$t.' Lorem ipsum dolor sit amet. 
+                    Vel quia dicta qui possimus reiciendis quo consequatur tenetur non quae quibusdam ab laboriosam neque. 
+                    Et distinctio minima et nostrum officiis qui voluptas sint.')
                     ->setPriority(random_int(0,3))
                     ->setUser($user);
 

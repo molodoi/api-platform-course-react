@@ -12,5 +12,11 @@ api_platform:
                 type: header
     defaults:
         pagination_enabled: false # desactive la pagination sur toutes les resources
-        pagination_items_per_page: 8 # pagination sur toutes les resources
+        pagination_items_per_page: 10 # pagination sur toutes les resources
         pagination_client_enabled: true # Autoriser le client a activer ou non la pagination
+        pagination_client_items_per_page: true
+    collection:
+        pagination:
+            enabled_parameter_name: pagination # optional
+            items_per_page_parameter_name: count
+            page_parameter_name: page

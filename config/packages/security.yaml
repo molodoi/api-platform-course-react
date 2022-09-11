@@ -41,7 +41,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/docs, roles: PUBLIC_ACCESS } # Allows accessing API documentations and Swagger UI
-        - { path: ^/authentication_token, roles: PUBLIC_ACCESS }
+        - { path: ^/authentication_token, roles: PUBLIC_ACCESS }        
         - {
             path: ^/api/users,
             roles: PUBLIC_ACCESS,
@@ -52,12 +52,8 @@ security:
             roles: ROLE_ADMIN,
             methods: [GET, PUT, DELETE],
         }
+        - { path: ^/api/todos, roles: PUBLIC_ACCESS }
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
-        - {
-            path: ^/api/users,
-            roles: ROLE_ADMIN,
-            methods: [GET, PUT, DELETE],
-        }
 
 when@test:
     security:
